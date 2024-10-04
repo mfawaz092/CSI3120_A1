@@ -70,7 +70,7 @@ class ParseTree:
     def __init__(self, root):
         self.root = root
 
-    def print_tree(self, node: Optional[Node] = None, level: int = 0, first_slash_seen=False) -> None:
+    def print_tree(self, node: Optional[Node] = None, level: int = 0) -> None:
         # TODO
         print("")
         
