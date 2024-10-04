@@ -71,9 +71,21 @@ class ParseTree:
         self.root = root
 
     def print_tree(self, node: Optional[Node] = None, level: int = 0) -> None:
-        # TODO
-        print("")
-        
+        """
+        Prints the tree structure starting from the root node.
+        :param node: The current node being printed. If None, starts from root.
+        :param level: The depth level of the current node (used for indentation).
+        """
+        if node is None:
+            node = self.root
+
+        # Print the current node's value with indentation based on its depth (level)
+        indent = "    " * level
+        print(f"{indent}{node.elem}")
+
+        # Recursively print the children of the node, increasing the indentation level
+        for child in node.children:
+            self.print_tree(child, level + 1)        
 
 
 def parse_tokens(s_: str) -> Union[List[str], bool]:
